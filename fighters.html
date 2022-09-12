@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Emoji<br>Fighter</h1>
+        <div id="stage"></div>
+        <button id="fightButton">Pick Fighters!</button>
+        <script src="index.js"></script>
+    </body>
+    <footer> Thanks For Playing
+        <br>
+            Sarah Youssef
+        </footer>
+</html>
+<script>
+let fighters = ["🐉", "🐥", "🐊","💩", "🦍", "🐢", "🐩", "🦭", "🦀", "🐝", "🤖", "🐘", "🐸", "🕷","🐆", "🦕", "🦁"]
+let stageEl = document.getElementById("stage")
+let fightButton = document.getElementById("fightButton")
+
+fightButton.addEventListener("click", function() {
+    let fighter1 = Math.floor(Math.random() * fighters.length)
+    let fighter2 = Math.floor(Math.random() * fighters.length)
+    stageEl.textContent = fighters[fighter1] +" vs "+ fighters[fighter2]
+    console.log(fighters[fighter1] +" vs "+ fighters[fighter2])
+    
+})
+</script>
+<style>
+    body {
+    margin: 100px;
+    padding: 0;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    height: 100vh;
+    color: #e93f1d;
+
+}
+
+h1 {
+    text-shadow: 0px 3px 0px black;
+    line-height: 24px;
+    transform: rotate(-9deg);
+}
+
+#stage {
+    width: 100%;
+    height: 60px;
+    padding: 30px 0;
+    font-size: 50px;
+    margin: 0;
+}
+
+button {
+    margin: 20px;
+    cursor: pointer;
+    border: 0;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: #5eee2e;
+    color: white;
+    font-family: inherit;
+    font-size: 20px;
+    
+    
+}
+button:active{
+    box-shadow: 2px 2px 5px #e93f1d;;
+    
+}
+</style>
